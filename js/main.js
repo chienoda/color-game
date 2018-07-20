@@ -9,9 +9,28 @@ var colors = [
 var squares = document.querySelectorAll('.square');
 var pickedColor = colors[3];
 var colorDisplay = document.getElementById('colorDisplay');
+var message = document.querySelector('#message');
+var isGameover = false;
 
 colorDisplay.textContent = pickedColor;
 
 for(var i = 0; i < squares.length; i++){
+	//add initial colors to squares
 	squares[i].style.backgroundColor = colors[i];
+
+	//add click listeners to squares
+	squares[i].addEventListener('click', function() {
+		//grab color of clicked square
+		//compare color to pickedColor
+		var clickedColor = this.style.backgroundColor;
+		if(clickedColor === pickedColor) {
+			message.textContent = "Correct!";
+			for(var i = 0; i < squares.length; i++){
+				this.style.backgroundColor = clickedColor;
+		  }
+		  isGameover = true;
+		} else {
+			message.textContent = "Try Again!";
+		}
+	});
 }

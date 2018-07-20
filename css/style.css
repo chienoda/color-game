@@ -1,7 +1,7 @@
 body {
 	background: #232323;
   font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   margin: 2em;
 }
 h1 {
@@ -9,23 +9,23 @@ h1 {
 }
 #container {
 	margin: 0 auto;
-  max-width: 600px;
+  max-width: 300px;
 }
 
-#display{
+#display {
 	background: rgb(0, 0, 128);
 	color: rgb(255, 255, 255);
-	height: 150px;
+	height: 80px;
 	text-align: center;
-	font-size: 25px;
+	font-size: 16px;
 	padding: 25px;
 }
-#setting{
+#setting {
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 128);
 
 }
-.square{
+.square {
 	background: rgb(0, 128, 128);
 	padding-bottom: 30%;
 	width: 30%;
