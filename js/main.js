@@ -9,7 +9,8 @@ var colors = [
 var squares = document.querySelectorAll('.square');
 var pickedColor = colors[3];
 var colorDisplay = document.getElementById('colorDisplay');
-var message = document.querySelector('#message');
+var messageDisplay = document.querySelector('#messageDisplay');
+var display = document.querySelector('#display');
 var isGameover = false;
 
 colorDisplay.textContent = pickedColor;
@@ -24,13 +25,22 @@ for(var i = 0; i < squares.length; i++){
 		//compare color to pickedColor
 		var clickedColor = this.style.backgroundColor;
 		if(clickedColor === pickedColor) {
-			message.textContent = "Correct!";
-			for(var i = 0; i < squares.length; i++){
-				this.style.backgroundColor = clickedColor;
-		  }
+			messageDisplay.textContent = "Correct!";
+			changeColors(clickedColor);
 		  isGameover = true;
 		} else {
-			message.textContent = "Try Again!";
+			this.style.backgroundColor = "#232323";
+			messageDisplay.textContent = "Try Again";
 		}
 	});
+}
+
+function changeColors(color) {
+	//loop through all squares
+	//change each color to match given color
+	for(var i = 0; i < squares.length; i++){
+			squares[i].style.backgroundColor = color;
+		};
+
+	display.style.backgroundColor = color;
 }
