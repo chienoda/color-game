@@ -21,10 +21,11 @@ h1 {
 	font-size: 16px;
 	padding: 25px;
 }
-#setting {
+#stripe {
 	background-color: rgb(255, 255, 255);
-	color: rgb(0, 0, 128);
-
+	height: 30px;
+	color: black;
+	text-align: center;
 }
 .square {
 	background: rgb(0, 128, 128);
@@ -33,4 +34,8 @@ h1 {
 	margin: 1.66%;
 	border-radius: 15px;
 	float: left;
+}
+#reset:hover,  #easy:hover, #hard:hover {
+	color: white;
+	background-color: blue;
 }
