@@ -12,7 +12,7 @@ var colors = generateRandomColors(numSquares);
 var squares = document.querySelectorAll('.square');
 var pickedColor = pickColor();
 var colorDisplay = document.getElementById('colorDisplay');
-var messageDisplay = document.querySelector('#messageDisplay');
+var messageDisplay = document.querySelector('#message');
 var h1 = document.querySelector('h1');
 var resetButton = document.getElementById('reset');
 var isEasyMode = false;
@@ -23,6 +23,7 @@ easyBtn.addEventListener('click', function() {
 	//three squares only
 	easyBtn.classList.add('selected');
 	hardBtn.classList.remove('selected');
+	messageDisplay.classList.add('hidden');
 	numSquares = 3;
 	colors = generateRandomColors(numSquares);
 	pickedColor = pickColor();
@@ -41,6 +42,7 @@ hardBtn.addEventListener('click', function() {
 	//six squares
 	hardBtn.classList.add('selected');
 	easyBtn.classList.remove('selected');
+	messageDisplay.classList.add('hidden');
 	numSquares = 6
 	colors = generateRandomColors(numSquares);
 	pickedColor = pickColor();
@@ -64,6 +66,8 @@ for(var i = 0; i < squares.length; i++){
 	squares[i].addEventListener('click', function() {
 		//grab color of clicked square
 		//compare color to pickedColor
+		messageDisplay.classList.remove('hidden');
+
 		var clickedColor = this.style.backgroundColor;
 		if(clickedColor === pickedColor) {
 			messageDisplay.textContent = "Correct!";
@@ -89,7 +93,8 @@ resetButton.addEventListener('click', function() {
 	}
 
 	this.textContent = "NEW COLORS";
-	h1.style.backgroundColor =  '#232323';
+	h1.style.backgroundColor =  'steelblue';
+	messageDisplay.classList.add('hidden');
 });
 
 function changeColors(color) {
